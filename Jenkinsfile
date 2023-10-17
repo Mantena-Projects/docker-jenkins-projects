@@ -13,7 +13,7 @@ pipeline {
 
          steps {
               
-             docker build -t dhub2000/docker-jenkins:1 .
+             docker build -t dhub2000/img:1 .
               
                }
           }
@@ -30,7 +30,7 @@ pipeline {
 
          steps {
 
-             docker push dhub2000/docker-jenkins:1
+             docker push dhub2000/img:1
 
                }
           }
