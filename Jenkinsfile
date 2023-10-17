@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-         docker push dhub2000/dockerimg:latest
+         docker push dhub2000/harika-img:latest
       }
     }
   }
