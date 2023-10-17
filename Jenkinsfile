@@ -7,23 +7,23 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-	    docker build -t dhub2000/harika-img:latest .
+	    sh 'docker build -t dhub2000/harika-img:latest .'
       }
     }
     stage('Login') {
       steps {
-         echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
       steps {
-         docker push dhub2000/harika-img:latest
+         sh 'docker push dhub2000/harika-img:latest'
       }
     }
   }
   post {
     always {
-       docker logout
+       sh 'docker logout'
     }
   }
 }
