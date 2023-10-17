@@ -8,16 +8,6 @@ pipeline {
   }
 
   stages {
-
-     stage('Checkout Code From GitHub') {
-
-          steps {
-
-              checkout([$class: 'GitSCM', branches:[[name: '*/main']], extensions:[], userRemoteConfigs:[[url:'']]])
-
-                }
-            }
-
      
     stage('Build Docker Image') {
 
