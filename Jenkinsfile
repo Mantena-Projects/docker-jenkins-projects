@@ -20,7 +20,7 @@ pipeline {
          sh 'docker push dhub2000/img:$BUILD_NUMBER'
       }
     }
-    stage('Push') {
+    stage('Latest Image') {
       steps {
          sh './jenkins/latest-img.sh'
       }
