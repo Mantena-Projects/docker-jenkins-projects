@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Latest Image') {
       steps {
-         sh './jenkins/latest-img.sh'
+         sh './jenkins/latest-img.sh $REPO_NAME'
       }
     }
   }
