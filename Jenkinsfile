@@ -37,7 +37,8 @@ pipeline {
     }
     stage('Run Container') {
       steps {
-         sh "docker run -d ${result}"
+	 cd './jenkins'
+         sh 'docker-compose up -d'
       }
     }
   }
