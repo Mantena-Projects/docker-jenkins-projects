@@ -5,6 +5,12 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('padma-dockerhub')
   }
   stages {
+    stage('Parameter') {
+      steps {
+	 script{
+	    properties([parameters([string(defaultValue: 'dhub2000/img', name: 'REPO_NAME')]), pipelineTriggers([githubPush()])])
+      }}
+    }
     stage('Build') {
       steps {
 	    sh 'docker build -t dhub2000/img:$BUILD_NUMBER .'
@@ -22,7 +28,7 @@ pipeline {
     }
     stage('Latest Image') {
       steps {
-         sh 'chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh $REPO_NAME'
+         sh "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}"
       }
     }
     stage('Run Docker Image') {
