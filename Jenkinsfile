@@ -32,11 +32,14 @@ pipeline {
 	 script {
 	   def output = sh(returnStdout: true,script: "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}")
 	   result="${output}"
-	   echo "${result}"
 	 }
       }
     }
-   
+    stage('Run Container') {
+      steps {
+         sh 'docker run -d result'
+      }
+    }
   }
   post {
     always {
