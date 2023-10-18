@@ -22,6 +22,7 @@ pipeline {
     }
     stage('Latest Image') {
       steps {
+	 sh 'chmod +x ./jenkins/latest-img.sh'
          sh './jenkins/latest-img.sh $REPO_NAME'
       }
     }
