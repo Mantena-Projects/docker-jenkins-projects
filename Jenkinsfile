@@ -28,12 +28,12 @@ pipeline {
     }
     stage('Latest Image') {
       steps {
-         sh "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}"
-      }
-    }
-    stage('Run Docker Image') {
-      steps {
-	 sh 'docker run -d '
+         //sh "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}"
+	 script {
+	  def output = sh(returnStdout: true, script: "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}")
+	  echo "${output}" 
+		 
+	 }
       }
     }
   }
