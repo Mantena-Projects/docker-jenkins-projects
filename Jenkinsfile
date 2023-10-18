@@ -36,7 +36,7 @@ pipeline {
     }
     stage('Run Container') {
       steps {
-         sh 'docker run -d "${output}"'
+         sh 'docker run -d $output'
       }
     }
   }
