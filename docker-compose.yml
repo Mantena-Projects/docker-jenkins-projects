@@ -1,4 +1,4 @@
 services:
   web:
-   image:nginx
+   image: nginx
 version: '3.0'
