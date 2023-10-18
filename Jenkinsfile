@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Latest Image') {
       steps {
-         sh 'chmod +x ./jenkins/latest-img.sh';./jenkins/latest-img.sh $REPO_NAME'
+         sh 'chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh $REPO_NAME'
       }
     }
     stage('Run Docker Image') {
