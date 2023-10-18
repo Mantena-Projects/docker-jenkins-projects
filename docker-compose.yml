@@ -1,4 +1,4 @@
 services:
   web:
-   image:"${result}"
+   image:nginx
 version: '3.0'
