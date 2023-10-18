@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-	    sh 'docker build -t dhub2000/harika-img:latest .'
+	    sh 'docker build -t dhub2000/IMG:$BUILD_NUMBER .'
       }
     }
     stage('Login') {
@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-         sh 'docker push dhub2000/harika-img:latest'
+         sh 'docker push dhub2000/IMG:$BUILD_NUMBER'
       }
     }
   }
