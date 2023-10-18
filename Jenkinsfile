@@ -31,11 +31,15 @@ pipeline {
          //sh "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}"
 	 script {
 	  def output = sh(returnStdout: true, script: "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}")
-	  echo "${output}" 
 		 
 	 }
       }
     }
+    stage('Run Container') {
+      steps {
+         sh 'docker run -d ${output}'
+      }
+    }  
   }
   post {
     always {
