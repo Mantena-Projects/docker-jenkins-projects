@@ -1,4 +1,4 @@
 services:
   web:
-   image: repo/img:tag
+   image: img
 version: '3.0'
