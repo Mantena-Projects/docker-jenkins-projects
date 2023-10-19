@@ -38,7 +38,7 @@ pipeline {
     stage('Run Container') {
       steps {
            //sh "docker run -d ${result}"
-	   sh 'sed "s/img/${result}/g" ./jenkins/docker-compose.yml | chmod +x ./jenkins/docker-compose.yml;./jenkins/docker-compose.yml | docker-compose up -d'
+	   //sh 'sed "s/img/${result}/g" ./jenkins/docker-compose.yml | chmod +x ./jenkins/docker-compose.yml;./jenkins/docker-compose.yml | docker-compose up -d'
 	   //sh './jenkins/docker-compose up -d'
       }
     }
