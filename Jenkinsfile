@@ -30,14 +30,14 @@ pipeline {
       steps {
          //sh "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}"
 	 script {
-	   def output = sh(returnStdout: true,script: "chmod +x ./latest-img.sh;./latest-img.sh ${params.REPO_NAME}")
+	   def output = sh(returnStdout: true,script: "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}")
 	   result="${output}"
 	 }
       }
     }
     stage('Run Container') {
       steps {
-         sh 'docker-compose up -d'
+         sh "docker run -d ${result}" 
       }
     }
   }
