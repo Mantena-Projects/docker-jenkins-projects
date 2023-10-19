@@ -20,13 +20,11 @@ pipeline {
          sh 'docker push dhub2000/img:$BUILD_NUMBER'
       }
     }
-     stages {
     stage('Parameter') {
       steps {
 	 script{
 	    properties([parameters([string(defaultValue: 'dhub2000/img', name: 'REPO_NAME')]), pipelineTriggers([githubPush()])])
       }}
-    }
     stage('Latest Image') {
       steps {
          //sh "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}"
