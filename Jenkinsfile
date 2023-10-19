@@ -39,7 +39,7 @@ pipeline {
       steps {
            //sh "docker run -d ${result}"
 	    sh "chmod +x ./docker-compose.yml"
-	    sh 'sed "s/img/${result}/g" docker-compose.yml | docker-compose up -d'
+	    sh 'sed "s/img/padma/g" docker-compose.yml | docker-compose up -d'
 	   //sh './jenkins/docker-compose up -d'
       }
     }
