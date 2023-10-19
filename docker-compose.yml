@@ -1,4 +1,4 @@
 services:
   web:
-   image: img
+   image: NAME:TAG
 version: '3.0'
