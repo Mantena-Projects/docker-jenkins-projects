@@ -20,6 +20,10 @@ pipeline {
          sh 'docker push dhub2000/img:$BUILD_NUMBER'
       }
     }
+    stage('Trigger Deploy Job') {
+      steps{
+	 build 'Docker_Deploy_Pipeline'
+      }}
     
   }
   post {
