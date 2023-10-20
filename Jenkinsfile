@@ -20,11 +20,6 @@ pipeline {
          sh 'docker push dhub2000/img:$BUILD_NUMBER'
       }
     }
-    stage('Trigger Deploy Job') {
-      steps {
-         build job: 'Docker_Deploy_Pipeline', parameters: [string(name: 'REPO_NAME', defaultValue: 'dhub2000/img')] 
-      }
-    }
     
   }
   post {
