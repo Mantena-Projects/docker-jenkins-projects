@@ -1,4 +1,0 @@
-services:
-  web:
-   image: img
-version: '3.0'
