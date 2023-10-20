@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Trigger Deploy Job') {
       steps {
-         build job: 'Docker_Deploy_Pipeline', parameters: [string(name: 'REPO_NAME', value: '')]
+         build job: 'Docker_Deploy_Pipeline', parameters: [string(name: 'REPO_NAME', defaultValue: 'dhub2000/img')] 
       }
     }
     
