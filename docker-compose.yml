@@ -1,4 +1,4 @@
 services:
   web:
-   image: img
+   image: imag
 version: '3.0'
