@@ -1,4 +1,4 @@
 services:
   web:
-   image:"${result}"
+   image: img
 version: '3.0'
