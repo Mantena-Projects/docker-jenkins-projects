@@ -22,7 +22,9 @@ pipeline {
     }
     stage('Trigger Deploy Job') {
       steps{
-	 build 'Docker_Deploy_Pipeline'
+	 script{
+		 build job: 'Docker_Deploy_Pipeline'
+	 }
       }}
     
   }
