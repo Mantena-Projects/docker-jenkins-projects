@@ -18,9 +18,9 @@ pipeline {
     }
      stage('Run Container') {
        steps {
-           //sh "docker run -d ${result}"
-	    sh "chmod +x ./docker-compose.yml"
-	    sh 'sed "s/repo/image:tag/dhub2000/img:93/g" docker-compose.yml | sudo docker-compose up -d'
+            sh "docker run -d ${result}"
+	    //sh "chmod +x ./docker-compose.yml"
+	    //sh 'sed "s/repo/image:tag/dhub2000/img:93/g" docker-compose.yml | sudo docker-compose up -d'
 	   //sh './jenkins/docker-compose up -d'
       }
     }
