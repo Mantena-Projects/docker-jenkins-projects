@@ -5,6 +5,7 @@ for tag in $taglist
 do
         createdTime="$( docker inspect -f '{{ .Created }}' $1:$tag )"
         formatedCT=$(date -d "$createdTime" +"%Y%m%d%H%M%S")
+        echo $formatedCT
         if [ $visited -eq 0 ]; then
                 greatestValue=$formatedCT
                 visited=1
@@ -17,4 +18,3 @@ do
 done
 
 imageId=$(docker images $1:$latestTag | awk '{print $3}' | sed '1d')
-echo $1:$latestTag
