@@ -4,8 +4,8 @@ visited=0
 for tag in $taglist
 do
         createdTime="$( docker inspect -f '{{ .Created }}' $1:$tag )"
-        formatedCT=$(date -d "$createdTime" +"%Y%m%d%H%M%S")
-        echo $formatedCT
+        #formatedCT=$(date -d "$createdTime" +"%Y%m%d%H%M%S")
+        echo $createdTime
         if [ $visited -eq 0 ]; then
                 greatestValue=$formatedCT
                 visited=1
