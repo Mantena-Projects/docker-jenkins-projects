@@ -20,7 +20,7 @@ pipeline {
        steps {
              //sh "docker run -d ${params.REPO_NAME}:${result}"
 	    //sh "chmod +x ./docker-compose.yml"
-	     sh "sed 's/img/dhub2000\/img:${result}/\1/g' ./docker-compose.yml"
+	     sh "sed 's/img/dhub2000/img:${result}//g' ./docker-compose.yml"
         }
      }
    }
