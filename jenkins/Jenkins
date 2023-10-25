@@ -21,8 +21,6 @@ pipeline {
        steps {
              //sh "docker run -d ${params.REPO_NAME}:${result}"
               sh sed -i "s|image:.*|image: $result|" "$compose_yml"
-	     //sh "sed 's/img/dhub2000/img:${result}//g' ./docker-compose.yml"
-              //sh sed -i "s|image:.*|image: $result|" ./docker-compose.yml
         }
      }
    }
