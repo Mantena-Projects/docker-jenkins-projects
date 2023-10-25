@@ -20,7 +20,7 @@ pipeline {
        steps {
              //sh "docker run -d ${params.REPO_NAME}:${result}"
               //sh "sed -r 's|image: img|image: ${result}|' ./jenkins/docker-compose.yml"
-                sh "sed 's/\image: img/image: ${result}/g' ./jenkins/docker-compose.yml"
+                sh "sed 's/image: img/image: ${result}/g' ./jenkins/docker-compose.yml"
               sh "cat ./jenkins/docker-compose.yml"
         } 
       }
