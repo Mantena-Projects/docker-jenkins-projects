@@ -13,14 +13,16 @@ pipeline {
 	   def output = sh(returnStdout: true,script: "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}")
 	   result="${params.REPO_NAME}:${output}"
 	   echo "${result}"
+           compose_yml="jenkins/docker-compose.yml"
 	 }
       }
    }
-     compose_yml="jenkins/docker-compose.yml"
      stage('Run Container') {
        steps {
              //sh "docker run -d ${params.REPO_NAME}:${result}"
-              sh sed -i "s|image: img|image: $result|" "$compose_yml"
+           script{
+              sh sed -i "s|image: .*|image: $result|" "$compose_yml"
+          }
         }
      }
    }
