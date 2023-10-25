@@ -1,4 +1,4 @@
 services:
   web:
-   image: dhub2000/img: 21
+   image: img
 version: '3.0'
