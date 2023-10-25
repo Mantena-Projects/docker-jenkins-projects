@@ -16,13 +16,14 @@ pipeline {
 	 }
       }
    }
-     stage('get the path for yml file') {
-
-       steps{
-          path=jenkins/docker-compose.yml
-          echo "${path}"
-       }}
-
+    stage('Run Container') {
+       steps {
+          script{
+             //sh "docker run -d ${params.REPO_NAME}:${result}"
+              sed -i "s|image: .*|image: ${result}|" jenkins/docker-compose.yml
+           }
+        } 
+   }
      }
     
    }
