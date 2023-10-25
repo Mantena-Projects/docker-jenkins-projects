@@ -13,11 +13,14 @@ pipeline {
 	   def output = sh(returnStdout: true,script: "chmod +x ./jenkins/latest-img.sh;./jenkins/latest-img.sh ${params.REPO_NAME}")
 	   result="${params.REPO_NAME}: ${output}"
 	   echo "${result}"
-           compose_yml=jenkins/docker-compose.yml
-           echo "${compose_yml}"
 	 }
       }
    }
+     stage('get the path for yml file') {
+
+       steps{
+          path=./jenkins/docker-compose.yml
+          echo "${path}"
 
      }
     
