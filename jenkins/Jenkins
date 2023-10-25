@@ -21,6 +21,7 @@ pipeline {
        steps{
           path=jenkins/docker-compose.yml
           echo "${path}"
+       }}
 
      }
     
