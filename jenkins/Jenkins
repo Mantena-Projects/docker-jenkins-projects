@@ -21,7 +21,7 @@ pipeline {
              //sh "docker run -d ${params.REPO_NAME}:${result}"
 	    //sh "chmod +x ./docker-compose.yml"
 	     //sh "sed 's/img/dhub2000/img:${result}//g' ./docker-compose.yml"
-              sh sed -i "s|img:.*|image: $result|" ./jenkins/docker-compose.yml
+              sh sed -i "s|img:.*|image: $result|" ./docker-compose.yml
         }
      }
    }
