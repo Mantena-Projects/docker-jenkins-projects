@@ -19,8 +19,7 @@ pipeline {
      stage('Run Container') {
        steps {
              //sh "docker run -d ${params.REPO_NAME}:${result}"
-              sh sed -i "s|image:.*|image: $result|" ./docker-compose.yml
-	    //sh "chmod +x ./docker-compose.yml"
+              sh sed -i "s|image:.*|image: $result|" docker-compose.yml
 	     //sh "sed 's/img/dhub2000/img:${result}//g' ./docker-compose.yml"
               //sh sed -i "s|image:.*|image: $result|" ./docker-compose.yml
         }
