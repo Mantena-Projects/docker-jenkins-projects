@@ -19,13 +19,6 @@ pipeline {
       }
    }
 
-    stage('Run Container') {
-       steps {
-          script{
-             //sh "docker run -d ${params.REPO_NAME}:${result}"
-              sed -i 's|image: .*|image: "${result}"|' "$compose_yml"
-           }
-        }
      }
     
    }
