@@ -20,10 +20,10 @@ pipeline {
        steps {
           script{
              //sh "docker run -d ${params.REPO_NAME}:${result}"
-              sed -i "s|image: .*|image: img|" docker-compose.yml
+              sed -i "s|image: .*|image: img|" ./jenkins/docker-compose.yml
            }
         } 
-   }
-     }
+      }
+  }
     
    }
