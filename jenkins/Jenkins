@@ -19,7 +19,7 @@ pipeline {
      stage('get the path for yml file') {
 
        steps{
-          path=./jenkins/docker-compose.yml
+          path=jenkins/docker-compose.yml
           echo "${path}"
 
      }
